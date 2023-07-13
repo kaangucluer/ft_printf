@@ -6,7 +6,7 @@
 /*   By: kgucluer <kgucluer@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 13:04:39 by kgucluer          #+#    #+#             */
-/*   Updated: 2023/07/13 17:27:47 by kgucluer         ###   ########.fr       */
+/*   Updated: 2023/07/13 18:08:06 by kgucluer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,19 @@ int	ft_putchar(char k)
 
 int	type_convert(va_list va, char type)
 {
+    if(type == 'c')
+        return ft_putchar(va_arg(va,int));
+    else if (type == 's')
+        return ft_typec(va_arg(va,char *));
+    else if (type == 'p')
+    else if (type == 'd')
+    else if (type == 'i')
+    else if (type == 'u')
+    else if (type == 'x')
+    else if (type == 'X')
+    else if (type == '%')
+        return ft_putchar('%');
+    
 }
 
 int	ft_printf(const char *str, ...)
