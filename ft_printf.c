@@ -6,7 +6,7 @@
 /*   By: kgucluer <kgucluer@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 13:04:39 by kgucluer          #+#    #+#             */
-/*   Updated: 2023/07/13 14:44:09 by kgucluer         ###   ########.fr       */
+/*   Updated: 2023/07/13 16:40:43 by kgucluer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,8 @@ int ft_printf(const char *str, ...)
     {
         if(str[i] == '%')
             total_byte += type_convert(args,str[++i]);
-        else
-            total_byte += ft_putchar(str[i]);
+        else if (write(1,&str[i],1) == -1)
+            return -1;
         i++;
     }
     va_end(args);
