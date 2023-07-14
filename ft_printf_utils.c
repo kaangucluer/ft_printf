@@ -23,3 +23,25 @@ int ft_typec(char *str)
         write(1,&str[i],1);
     return (i);
 }
+
+int ft_typeint(int k)
+{
+    int len;
+
+    len = 0;
+
+    if (k == -2147483648)
+		return (write(1, "-2147483648", 11));
+    if (k < 0)
+    {
+        len += write(1,"-",1);
+        k = -1
+    }
+    if (k >= 10)
+    {
+        len +=ft_typeint(k/10);
+    }
+    else
+     write(1, &"0123456789"[a % 10], 1);
+    return (len);
+}

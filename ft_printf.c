@@ -26,6 +26,7 @@ int	type_convert(va_list va, char type)
     else if (type == 's')
         return ft_typec(va_arg(va,char *));
     else if (type == 'p')
+	
     else if (type == 'd')
     else if (type == 'i')
     else if (type == 'u')
