@@ -38,14 +38,14 @@ int	type_convert(va_list va, char type)
 int	ft_printf(const char *str, ...)
 {
 	va_list	args;
-	int		index;
+	int		i;
 	int		total_byte;
 	int		tmp;
 
-	va_start(str, args);
-	index = 0;
+	va_start(args, str);
+	i = -1;
 	total_byte = 0;
-	while (str[i])
+	while (str[++i])
 	{
 		if (str[i] == '%')
 		{
@@ -53,11 +53,11 @@ int	ft_printf(const char *str, ...)
 			if (tmp == -1)
 				return (-1);
 			total_byte += tmp - 1;
+			i++;
 		}
 		else if (write(1, &str[i], 1) == -1)
 			return (-1);
 		total_byte++;
-		i++;
 	}
 	va_end(args);
 	return (total_byte);
