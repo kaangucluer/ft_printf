@@ -5,7 +5,7 @@ SRC = $(shell find . -name "ft_*.c")
 
 all: $(NAME)
 
-$(NAME): 
+$(NAME):
 	gcc $(FLAG) -c $(SRC)
 	ar rc $(NAME) *.o
 

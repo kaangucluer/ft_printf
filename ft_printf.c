@@ -6,11 +6,11 @@
 /*   By: kgucluer <kgucluer@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 13:04:39 by kgucluer          #+#    #+#             */
-/*   Updated: 2023/07/15 14:23:49 by kgucluer         ###   ########.fr       */
+/*   Updated: 2023/07/15 15:10:35 by kgucluer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 int	ft_putchar(char k)
 {
@@ -24,26 +24,26 @@ int	type_convert(va_list va, char type)
 	else if (type == 's')
 		return (ft_typec(va_arg(va, char *)));
 	else if (type == 'p')
-		return (ft_type_dectohex(va_arg(va, unsigned long), 1));
+		return (ft_type_dectohex(va_arg(va, unsigned long long), 1));
 	else if (type == 'd' || type == 'i')
 		return (ft_typeint(va_arg(va, int)));
 	else if (type == 'u')
 		return (ft_typedec(va_arg(va, unsigned int)));
 	else if (type == 'x' || type == 'X')
-		return (ft_type_xandX(va_arg(va, unsigned long), type));
-	else if (type == '%')
+		return (ft_type_xandx(va_arg(va, unsigned long), type));
+	else
 		return (ft_putchar('%'));
 }
 
 int	ft_printf(const char *str, ...)
 {
 	va_list	args;
-	int		index;
+	int		i;
 	int		total_byte;
 	int		tmp;
 
-	va_start(str, args);
-	index = 0;
+	va_start(args, str);
+	i = 0;
 	total_byte = 0;
 	while (str[i])
 	{
