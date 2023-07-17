@@ -6,7 +6,7 @@
 /*   By: kgucluer <kgucluer@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 12:49:55 by kgucluer          #+#    #+#             */
-/*   Updated: 2023/07/17 14:16:56 by kgucluer         ###   ########.fr       */
+/*   Updated: 2023/07/17 15:56:45 by kgucluer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,9 @@ int	ft_putchar(char k);
 int	ft_strlen(char *base);
 int	ft_typec(char *str);
 int	ft_typeint(long k);
-int	ft_putptr(uintptr_t n, char *base);
-int	ft_type_upperx(unsigned int k, char c, char *base);
+int	ft_putptr(unsigned long n, char *base);
 int	ft_type_lowerx(unsigned int k, char c, char *base);
+int	ft_type_upperx(unsigned int k, char c, char *base);
 int	ft_typedec(unsigned int k, char *base);
 
 #endif
