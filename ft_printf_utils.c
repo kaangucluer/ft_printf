@@ -6,7 +6,7 @@
 /*   By: kgucluer <kgucluer@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 18:00:17 by kgucluer          #+#    #+#             */
-/*   Updated: 2023/07/17 14:20:38 by kgucluer         ###   ########.fr       */
+/*   Updated: 2023/07/17 14:33:43 by kgucluer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,20 +61,20 @@ int	ft_typeint(long k)
 	return (len + 1);
 }
 
-int	ft_putptr(uintptr_t n, char *base)
+int	ft_putptr(unsigned long n, char *base)
 {
-	size_t	printed;
-	size_t	base_length;
+	int				printed;
+	unsigned int	baseln;
 
 	printed = 0;
-	base_length = ft_strlen(base);
-	if (n >= (uintptr_t)base_length)
+	baseln = (unsigned int)ft_strlen(base);
+	if (n >= baseln)
 	{
-		printed += ft_putptr(n / base_length, base);
-		printed += ft_putptr(n % base_length, base);
+		printed += ft_putptr(n / baseln, base);
+		printed += ft_putptr(n % baseln, base);
 	}
 	else
-		printed += ft_putchar(base[n % base_length]);
+		printed += ft_putchar(base[n % baseln]);
 	return (printed);
 }
 
