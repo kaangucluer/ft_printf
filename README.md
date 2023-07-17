@@ -18,7 +18,7 @@
 
 • %% yüzde işareti yazdırır.
 
-# ariable arguments   <stdarg.h>
+# variable arguments   <stdarg.h>
 
 • va_list bir makro ve değişken argüman listesini temsil eden bir türdür.
 
