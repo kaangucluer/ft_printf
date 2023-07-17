@@ -6,7 +6,7 @@
 /*   By: kgucluer <kgucluer@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 13:04:39 by kgucluer          #+#    #+#             */
-/*   Updated: 2023/07/16 21:52:24 by kgucluer         ###   ########.fr       */
+/*   Updated: 2023/07/17 14:20:31 by kgucluer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,11 @@ int	type_convert(va_list va, char type)
 	else if (type == 'i' || type == 'd')
 		return (ft_typeint(va_arg(va, int)));
 	else if (type == 'u')
-		return (ft_typedec(va_arg(va, unsigned int)));
-	else if (type == 'x' || type == 'X')
-		return (ft_type_xandx(va_arg(va, unsigned int), type));
+		return (ft_typedec(va_arg(va, unsigned int), BASE10));
+	else if (type == 'X')
+		return (ft_type_upperx(va_arg(va, unsigned int), type, BASE16UPPER));
+	else if (type == 'x')
+		return (ft_type_lowerx(va_arg(va, unsigned int), type, BASE16LOWER));
 	else
 		return (ft_putchar('%'));
 }

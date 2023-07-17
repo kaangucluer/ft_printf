@@ -1,33 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_typedec.c                                       :+:      :+:    :+:   */
+/*   ft_type_upperx.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kgucluer <kgucluer@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/16 18:18:12 by kgucluer          #+#    #+#             */
-/*   Updated: 2023/07/17 14:20:27 by kgucluer         ###   ########.fr       */
+/*   Created: 2023/07/17 14:07:57 by kgucluer          #+#    #+#             */
+/*   Updated: 2023/07/17 14:20:36 by kgucluer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_typedec(unsigned int k, char *base)
+int	ft_type_upperx(unsigned int k, char c, char *base)
 {
 	int				len;
 	unsigned int	baseln;
 	int				tmp;
 
-	baseln = 0;
-	len = 0;
 	tmp = 0;
+	len = 0;
 	baseln = (unsigned int)ft_strlen(base);
 	if (k >= baseln)
-		tmp += ft_typedec(k / 10, base);
+		tmp += ft_type_upperx(k / 16, c, base);
 	if (tmp == -1)
 		return (-1);
 	len += tmp;
-	if (write(1, &"0123456789"[k % 10], 1) == -1)
-		return (-1);
+	if (c == 'X')
+		if (write(1, &"0123456789ABCDEF"[k % 16], 1) == -1)
+			return (-1);
 	return (len + 1);
 }

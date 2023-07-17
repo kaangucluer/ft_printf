@@ -6,7 +6,7 @@
 /*   By: kgucluer <kgucluer@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 12:49:55 by kgucluer          #+#    #+#             */
-/*   Updated: 2023/07/16 21:40:41 by kgucluer         ###   ########.fr       */
+/*   Updated: 2023/07/17 14:16:56 by kgucluer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,8 @@ int	ft_strlen(char *base);
 int	ft_typec(char *str);
 int	ft_typeint(long k);
 int	ft_putptr(uintptr_t n, char *base);
-int	ft_type_xandx( unsigned int k, char c);
-int	ft_typedec(unsigned int k);
+int	ft_type_upperx(unsigned int k, char c, char *base);
+int	ft_type_lowerx(unsigned int k, char c, char *base);
+int	ft_typedec(unsigned int k, char *base);
 
 #endif

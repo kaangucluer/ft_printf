@@ -6,7 +6,7 @@
 /*   By: kgucluer <kgucluer@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 18:00:17 by kgucluer          #+#    #+#             */
-/*   Updated: 2023/07/16 21:40:59 by kgucluer         ###   ########.fr       */
+/*   Updated: 2023/07/17 14:20:38 by kgucluer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,18 +78,22 @@ int	ft_putptr(uintptr_t n, char *base)
 	return (printed);
 }
 
-int	ft_type_xandx(unsigned int k, char c)
+int	ft_type_lowerx(unsigned int k, char c, char *base)
 {
-	int	len;
+	int				len;
+	int				tmp;
+	unsigned int	baseln;
 
+	tmp = 0;
 	len = 0;
-	if (k >= 16)
-		len += ft_type_xandx(k / 16, c);
+	baseln = (unsigned int)ft_strlen(base);
+	if (k >= baseln)
+		tmp += ft_type_lowerx(k / 16, c, base);
+	if (tmp == -1)
+		return (-1);
+	len += tmp;
 	if (c == 'x')
 		if (write(1, &"0123456789abcdef"[k % 16], 1) == -1)
-			return (-1);
-	if (c == 'X')
-		if (write(1, &"0123456789ABCDEF"[k % 16], 1) == -1)
 			return (-1);
 	return (len + 1);
 }
