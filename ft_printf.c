@@ -6,7 +6,7 @@
 /*   By: kgucluer <kgucluer@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 13:04:39 by kgucluer          #+#    #+#             */
-/*   Updated: 2023/07/17 15:57:35 by kgucluer         ###   ########.fr       */
+/*   Updated: 2023/07/17 16:22:44 by kgucluer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	type_convert(va_list va, char type)
 	{
 		if (write(1, "0x", 2) == -1)
 			return (-1);
-		tmp = ft_putptr(va_arg(va, uintptr_t), BASE16LOWER);
+		tmp = ft_putptr(va_arg(va, unsigned long), BASE16LOWER);
 		if (tmp == -1)
 			return (-1);
 		return (tmp + 2);
